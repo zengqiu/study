@@ -3,11 +3,11 @@
 # 找出 Amazon S3 Web 服务支持的 SOAP 方法
 
 # SOAPpy 0.12.22 BUG:
-# NameError: global name 'logging' is not defined
+#     NameError: global name 'logging' is not defined
 # Solution:
-# pip install logging
-# Edit --- /usr/local/lib/python2.7/dist-packages/wstools/WSDLTools.py
-# Add --- import logging
+#     pip install logging
+#     File --- /usr/local/lib/python2.7/dist-packages/wstools/WSDLTools.py
+#     Add a line --- import logging
 
 import SOAPpy
 
