@@ -8,8 +8,8 @@ import urllib2
 
 ID_USERNAME = 'username'
 ID_PASSWORD = 'password'
-USERNAME = 'zengqiu@qq.com'
-PASSWORD = 'kuangfen'
+USERNAME = ''
+PASSWORD = ''
 LOGIN_URL = 'https://bitbucket.org/account/signin/?next=/'
 NORMAL_URL = 'https://bitbucket.org/'
 

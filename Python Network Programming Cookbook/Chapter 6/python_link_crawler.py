@@ -37,7 +37,7 @@ def search_links(url, depth, search):
         if (search in contents):
             print "Found " + search + " at " + url
 
-        print " ==> %s: processing %s links" %(str(depth), str(len(all_links)))
+        print " ==> %s: processing %s links" % (str(depth), str(len(all_links)))
         for href in all_links:
             # Find relative urls
             if (href.startswith("/")):
