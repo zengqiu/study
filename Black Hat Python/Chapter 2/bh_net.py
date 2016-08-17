@@ -176,7 +176,7 @@ def client_sender(buffer):
 def usage():
     print "Netcat Replacement"
     print
-    print "Usage: bhpnet.py -t target_host -p port"
+    print "Usage: bh_net.py -t target_host -p port"
     print "-l --listen                - listen on [host]:[port] for incoming connections"
     print "-e --execute=file_to_run   - execute the given file upon receiving a connection"
     print "-c --command               - initialize a command shell"
@@ -184,11 +184,11 @@ def usage():
     print
     print
     print "Examples:"
-    print "./bhpnet.py -p 5555 -l -c"
-    print "./bhpnet.py -t 192.168.0.1 -p 5555 -c"
-    print "./bhpnet.py -t 192.168.0.1 -p 5555 -u c:/target.exe"
-    print "./bhpnet.py -t 192.168.0.1 -p 5555 -e \"cat /etc/passwd\""
-    print "echo 'GET / HTTP/1.1\r\nHost: www.v2ex.com\r\n\r\n' | ./bhpnet.py -t www.v2ex.com -p 80"
+    print "./bh_net.py -p 5555 -l -c"
+    print "./bh_net.py -t 192.168.0.1 -p 5555 -c"
+    print "./bh_net.py -t 192.168.0.1 -p 5555 -u c:/target.exe"
+    print "./bh_net.py -t 192.168.0.1 -p 5555 -e \"cat /etc/passwd\""
+    print "echo 'GET / HTTP/1.1\r\nHost: www.v2ex.com\r\n\r\n' | ./bh_net.py -t www.v2ex.com -p 80"
     sys.exit(0)
 
 def main():
