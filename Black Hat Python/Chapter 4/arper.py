@@ -7,6 +7,7 @@ from scapy.all import *
 import os
 import sys
 import threading
+import signal
 
 interface = "enp0s3"
 target_ip = "192.168.1.111"
@@ -21,7 +22,7 @@ def restore_target(gateway_ip, gateway_mac, target_ip, target_mac):
     send(ARP(op=2, psrc=target_ip, pdst=gateway_ip, hwdst="ff:ff:ff:ff:ff:ff", hwsrc=target_mac), count=5)
 
     # Signals the main thread to exit
-  os.kill(os.getpid(), signal.SIGINT)
+    os.kill(os.getpid(), signal.SIGINT)
     
 def get_mac(ip_address):
     responses, unanswered = srp(Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst=ip_address), timeout=2, retry=10)
