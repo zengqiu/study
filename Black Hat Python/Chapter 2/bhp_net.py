@@ -184,10 +184,10 @@ def usage():
     print
     print
     print "Examples:"
-    print "./bh_net.py -p 5555 -l -c"
-    print "./bh_net.py -t 192.168.0.1 -p 5555 -c"
-    print "./bh_net.py -t 192.168.0.1 -p 5555 -u c:/target.exe"
-    print "./bh_net.py -t 192.168.0.1 -p 5555 -e \"cat /etc/passwd\""
+    print "./bhp_net.py -p 5555 -l -c"
+    print "./bhp_net.py -t 192.168.0.1 -p 5555 -c"
+    print "./bhp_net.py -t 192.168.0.1 -p 5555 -u c:/target.exe"
+    print "./bhp_net.py -t 192.168.0.1 -p 5555 -e \"cat /etc/passwd\""
     print "echo 'GET / HTTP/1.1\r\nHost: www.v2ex.com\r\n\r\n' | ./bh_net.py -t www.v2ex.com -p 80"
     sys.exit(0)
 
