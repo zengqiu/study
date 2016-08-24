@@ -188,7 +188,7 @@ def usage():
     print "./bhp_net.py -t 192.168.0.1 -p 5555 -c"
     print "./bhp_net.py -t 192.168.0.1 -p 5555 -u c:/target.exe"
     print "./bhp_net.py -t 192.168.0.1 -p 5555 -e \"cat /etc/passwd\""
-    print "echo 'GET / HTTP/1.1\r\nHost: www.v2ex.com\r\n\r\n' | ./bh_net.py -t www.v2ex.com -p 80"
+    print "echo 'GET / HTTP/1.1\r\nHost: www.v2ex.com\r\n\r\n' | ./bhp_net.py -t www.v2ex.com -p 80"
     sys.exit(0)
 
 def main():
